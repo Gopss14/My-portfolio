@@ -1,0 +1,405 @@
+/* Animated Gradient Background */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #1e1e2f, #0f2027, #2c5364);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    color: #fff;
+    margin: 0;
+    padding: 0 20px;
+    line-height: 1.6;
+  }
+  @keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  .profile-pic {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 10px auto;
+    display: block;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  
+  /* Layout */
+  header, section, footer {
+    margin: 60px auto;
+    max-width: 1000px;
+    text-align: center;
+  }
+  h1, h2, h3 {
+    text-shadow: 0 0 5px #1abc9c, 0 0 10px #1abc9c, 0 0 20px #1abc9c;
+    margin-bottom: 10px;
+  }
+  
+  /* Navigation */
+  nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    list-style: none;
+    padding: 0;
+  }
+  nav ul li a {
+    color: #1abc9c;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: 0.3s;
+  }
+  nav ul li a:hover {
+    text-shadow: 0 0 5px #1abc9c, 0 0 10px #1abc9c;
+  }
+  
+  /* Section Divider */
+  .divider {
+    border: none;
+    height: 2px;
+    margin: 40px auto;
+    width: 80%;
+    background: linear-gradient(to right, transparent, #1abc9c, transparent);
+  }
+  
+  /* Project Section */
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+  }
+  .project {
+    animation: fadeInUp 1s ease forwards;
+    opacity: 0;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+  
+  .project:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 10px 25px rgba(26, 188, 156, 0.5);
+  }
+  
+  .project img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+  
+  /* Skills */
+  .skills li {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid #1abc9c;
+    padding: 10px 20px;
+    border-radius: 25px;
+    box-shadow: 0 0 8px #1abc9c;
+    font-weight: bold;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .skills li:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 12px #1abc9c, 0 0 24px #1abc9c;
+  }
+  
+  
+  /* Interests */
+  .interests p {
+    margin: 10px auto;
+    font-size: 1.05em;
+    color: #cceee9;
+    text-shadow: 0 0 5px #1abc9c;
+  }
+  
+  /* Buttons */
+  .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid #1abc9c;
+    color: #1abc9c;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    text-shadow: 0 0 5px #1abc9c;
+    box-shadow: 0 0 5px #1abc9c, 0 0 15px #1abc9c;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .btn:hover {
+    background: #1abc9c;
+    color: #0f2027;
+    box-shadow: 0 0 10px #1abc9c, 0 0 20px #1abc9c, 0 0 30px #1abc9c;
+    transform: scale(1.05);
+  }
+  
+  
+  /* Footer */
+  footer {
+    margin-top: 80px;
+    font-size: 0.9em;
+    color: #aaa;
+  }
+  /* Education Section */
+#education {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.education-item {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(26, 188, 156, 0.3);
+  margin: 20px auto;
+  max-width: 800px;
+}
+
+.education-item h3 {
+  color: #1abc9c;
+  margin-bottom: 10px;
+}
+
+.education-item p {
+  font-size: 1.1em;
+  color: #cceee9;
+  margin: 5px 0;
+}
+
+
+/* Animation keyframes */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply animation to each project */
+.project {
+  animation: fadeInUp 1s ease forwards;
+  opacity: 0; /* Hidden initially */
+}
+
+/* Add staggered delay */
+.project:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.project:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.project:nth-child(3) {
+  animation-delay: 0.6s;
+}
+.project:nth-child(4) {
+  animation-delay: 0.8s;
+}
+.project:nth-child(5) {
+  animation-delay: 1s;
+}
+
+.experience-row {
+  display: flex;
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
+  justify-content: center;
+  gap: 20px;
+  padding: 10px 0;
+}
+
+.experience-item {
+  flex: 1 1 300px; /* Flexible width with min 300px */
+  max-width: 320px;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+#contact {
+  text-align: center;
+  padding: 20px 20px;
+  color: white;
+}
+
+#contact p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+  margin: 10px 0;
+  font-family: inherit;
+}
+
+#contact i {
+  color: white;
+  font-size: 1.2rem;
+}
+
+#contact a {
+  color: white;
+  text-decoration: none;
+}
+
+#contact a:hover {
+  text-decoration: underline;
+} 
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 500px;
+  margin: auto;
+}
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  font-size: 1rem;
+  font-family: inherit;
+  border: 1px solid #555;
+  border-radius: 8px;
+  background-color: #f7f0f0;
+  color: #000000;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact-form button {
+  padding: 12px 20px;
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.contact-form button:hover {
+  background-color: #0056b3;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+}
+
+.close-btn {
+  float: right;
+  font-size: 24px;
+  cursor: pointer;
+  color: #888;
+}
+
+.social-links {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.social-link {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: color 0.3s;
+}
+
+.social-link i {
+  margin-right: 8px;
+  font-size: 1.3rem;
+}
+.social-link:hover {
+  color: #007bff !important; /* Makes sure the hover effect is applied */
+}
+
+.social-link.linkedin:hover,
+.social-link.github:hover {
+  color: #007bff; /* Turns the color to blue on hover */
+}
+/* Default Styles for Desktop */
+nav ul {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+}
+
+nav ul li {
+  margin-right: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  font-size: 18px;
+  color: #fffcfc;
+}
+
+nav .menu-toggle {
+  display: none;
+  font-size: 30px;
+  background: none;
+  border: none;
+  color: #333;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  nav ul {
+    display: none; /* Hide menu by default */
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: #fff;
+    position: absolute;
+    top: 60px; /* Adjust according to header height */
+    left: 0;
+    padding: 0;
+    margin: 0;
+  }
+
+  nav ul li {
+    margin: 10px 0; /* Vertical space between items */
+  }
+
+  nav ul li a {
+    font-size: 20px;
+  }
+
+  nav .menu-toggle {
+    display: block;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+  }
+
+  nav.active ul {
+    display: flex; /* Show menu when active */
+  }
+}
